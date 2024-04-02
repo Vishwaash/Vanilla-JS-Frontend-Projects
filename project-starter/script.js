@@ -1,63 +1,34 @@
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const password2 = document.getElementById('password2');
+const form = document.getElementById('my_form');
+form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-
-//Show input error message
-function showError(input, message){
-    console.log()
-    const formControl = input.parentElement;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-}
-
-//Show Success outline
-function showSuccess(input){
-    const formControl = input.parentElement;
-    formControl.className='form-control success';
-}
-
-//check email is valid
-function isValidEmail(email){
-    const re =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return re.test(String(email).toLowerCase());
-}
-
-
-//Event Listeners
-form.addEventListener('submit',function(e){
-    e.preventDefault()
-
-    console.log("form sumitted!")
-    
-
-    if(username.value === ''){
-        showError(username,'Username is required');
-    }else{
-        showSuccess(username);
+    //conditionals 
+    if(name === ''){
+        console.log("EMAIL ISSUE");
+        alert("Please Enter your name");
+        return;
     }
-    
-    if(email.value === ''){
-        showError(email,'email is required');
-    }else if(!isValidEmail(email.value)){
-        showError(email,'Email is not valid');
+    if(email === ''){
+        alert("Please Enter your mail");
+        return;
     }
-    else{
-        showSuccess(email);
+    if(!validateEmail(email)){
+        alert("Please enter a valid email address");
+        return;
     }
-    
-    if(password.value === ''){
-        showError(password,'Password is required');
-    }else{
-        showSuccess(password);
+    if(password === ''){
+        alert("Please enter a password");
+        return;
     }
-    
-    if(password2.value === ''){
-        showError(password2,'Password2 is required');
-    }else{
-        showSuccess(password2);
-    }
+    //If all the fields are valid,you can submit the form or perform the other function here
+    alert('Form submitted successfully');
 });
+
+
+function validateEmail(email){
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
