@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 15px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  margin-right: 15px;
+}
+
+.content {
+  flex-grow: 1; /* Allows content to expand to fill remaining space */
+}
+
+.score {
+  margin-left: auto; /* Pushes score to the right */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="small_image.jpg" alt="Small Image" class="image">
+        <div class="content">
+          <p>This is the text content in the middle.</p>
+        </div>
+        <div class="score">
+          <p>Score: 90%</p>
+        </div>
+      </div>
+</body>
+</html>
