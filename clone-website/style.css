@@ -58,3 +58,37 @@ h1{
 #myProgressBar{
     width:85vw
 }
+.one{
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 15px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.image{
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 15px;
+    border-radius: 100px;
+}
+.content{
+    flex-grow: 1; /* Allows content to expand to fill remaining space */
+    padding: 10px 40px;
+    font-size: x-large;
+}
+.audio1{
+    margin-left: auto; /* Pushes score to the right */
+}
+audio {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color: #333;
+  }
