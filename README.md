@@ -1,1 +1,1 @@
-# 50-projects-of-HTML-CSS-JAVASCRIPT
+# 20-projects-of-HTML-CSS-JAVASCRIPT
